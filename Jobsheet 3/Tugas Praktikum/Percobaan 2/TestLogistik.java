@@ -1,24 +1,23 @@
+import java.util.Scanner;
+
 public class TestLogistik {
     public static void main(String[] args) {
+        Scanner hikmal14 = new Scanner(System.in);
         Kontainer kontainerAlfa = new Kontainer("REQ-9988", "PT. Maju Bersama", 5000);
 
         System.out.println("Nama Pemilik Kontainer: " + kontainerAlfa.getNamaPemilik());
         System.out.println("Kapasitas Maksimal: " + kontainerAlfa.getKapasitasMaksimal() + " kg");
 
-        System.out.println("\nMemasukkan muatan baru seberat 6.000 kg...");
-        kontainerAlfa.tambahMuatan(6000);
+        System.out.print("\nMasukkan berat muatan yang ingin ditambahkan (kg): ");
+        double beratTambah = hikmal14.nextDouble();
+        kontainerAlfa.tambahMuatan(beratTambah);
         System.out.println("Berat muatan saat ini: " + kontainerAlfa.getBeratMuatanSaatIni() + " kg");
 
-        System.out.println("\nMemasukkan muatan baru seberat 4.000 kg...");
-        kontainerAlfa.tambahMuatan(4000);
+        System.out.print("\nMasukkan berat muatan yang ingin diturunkan (kg): ");
+        double beratTurun = hikmal14.nextDouble();
+        kontainerAlfa.turunkanMuatan(beratTurun);
         System.out.println("Berat muatan saat ini: " + kontainerAlfa.getBeratMuatanSaatIni() + " kg");
 
-        System.out.println("\nMemasukkan muatan baru seberat 500 kg...");
-        kontainerAlfa.tambahMuatan(500);
-        System.out.println("Berat muatan saat ini: " + kontainerAlfa.getBeratMuatanSaatIni() + " kg");
-
-        System.out.println("\nMemasukkan muatan baru seberat 1.500 kg...");
-        kontainerAlfa.tambahMuatan(1500);
-        System.out.println("Berat muatan saat ini: " + kontainerAlfa.getBeratMuatanSaatIni() + " kg");
+        hikmal14.close();
     }
 }
